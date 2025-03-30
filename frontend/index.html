@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wildlife Conservation Donation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Wildlife Conservation Fund</h1>
+    <p>Protecting endangered species through blockchain technology</p>
+  </header>
+
+  <main class="dashboard">
+    <section class="wallet-info">
+      <button id="connectBtn" class="button">
+        Connect Wallet
+      </button>
+      <div class="balance-info">
+        <span>ETH Balance:</span>
+        <span id="balance">0.00</span>
+      </div>
+    </section>
+
+    <section class="donate-form">
+      <h2>Make a Donation</h2>
+      <p>Your contribution helps protect endangered species and their habitats</p>
+      <form id="donateForm">
+        <div class="form-group">
+          <label for="donationAmount">ETH Amount</label>
+          <input type="number" id="donationAmount" min="0.01" step="0.01" placeholder="0.01" required>
+        </div>
+        <div class="form-group">
+          <label for="projectSelect">Select Project</label>
+          <select id="projectSelect">
+            <option value="general">General Conservation Fund</option>
+            <option value="tigers">Save the Tigers</option>
+            <option value="oceans">Ocean Cleanup Initiative</option>
+            <option value="forests">Rainforest Protection</option>
+          </select>
+        </div>
+        <button type="submit" class="button donate-button">Donate Now</button>
+      </form>
+      <div id="donationStatus"></div>
+    </section>
+
+    <section class="transaction-history">
+      <h2>Your Conservation Impact</h2>
+      <div id="impactStats">
+        <div class="stat-card">
+          <h3>Total Donated</h3>
+          <p id="totalDonated">0 ETH</p>
+        </div>
+        <div class="stat-card">
+          <h3>Species Protected</h3>
+          <p id="speciesProtected">0</p>
+        </div>
+      </div>
+      <h3>Donation History</h3>
+      <ul id="txHistory"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Wildlife Conservation Fund. All donations are tax-deductible.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.7.0/dist/ethers.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
